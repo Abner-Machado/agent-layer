@@ -1,10 +1,10 @@
 // rag-poison-ledger — tests for lib.mjs and cli.mjs
 // Gerado por: opencode/mimo-v2.5-free em 2026-08-30. Sem dependencias externas.
 
-import { describe, it, afterEach } from "node:test";
+import { describe, it, afterEach, after } from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { writeFileSync, readFileSync, unlinkSync, existsSync } from "node:fs";
+import { writeFileSync, readFileSync, unlinkSync, existsSync, mkdtempSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import {
@@ -216,6 +216,7 @@ describe("document used in multiple responses", () => {
 });
 
 const CLI = join(import.meta.dirname, "cli.mjs");
+const testTmpDir = mkdtempSync(join(tmpdir(), "rag-poison-ledger-test-"));
 
 function runCli(args) {
   try {
@@ -230,8 +231,12 @@ function runCli(args) {
 }
 
 function tmpLedger(name) {
-  return join(tmpdir(), `test-ledger-${name}-${Date.now()}.jsonl`);
+  return join(testTmpDir, `test-ledger-${name}.jsonl`);
 }
+
+after(() => {
+  rmSync(testTmpDir, { recursive: true, force: true });
+});
 
 describe("cli.mjs — validacao de argumentos", () => {
   it("recusa response-id comecando com hifen", () => {
