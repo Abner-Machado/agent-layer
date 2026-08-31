@@ -1,0 +1,5 @@
+[resultado] res2 ÔÇö Email entregue para 12 membros
+ÔööÔöÇÔöÇ [ferramenta] fer2 ÔÇö Enviou email com instrucoes para o time
+  ÔööÔöÇÔöÇ [decisao] dec1 ÔÇö Decidiu aplicar Kanban para o time de infra
+    ÔööÔöÇÔöÇ [contexto] ctx1 ÔÇö Extraiu principios do Scrum e Kanban
+      ÔööÔöÇÔöÇ [documento] doc1 ÔÇö Artigo sobre metodologias ageis

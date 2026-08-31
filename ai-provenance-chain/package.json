@@ -1,0 +1,10 @@
+{
+  "name": "ai-provenance-chain",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "ai-provenance-chain": "./cli.mjs"
+  },
+  "license": "MIT",
+  "description": "Cadeia de procedencia de quatro elos para rastreabilidade de resultados de agentes IA"
+}

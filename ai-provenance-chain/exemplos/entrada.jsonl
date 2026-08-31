@@ -1,0 +1,7 @@
+{"id":"doc1","type":"documento","parentId":null,"timestamp":"2026-08-30T10:00:00Z","summary":"Artigo sobre metodologias ageis"}
+{"id":"ctx1","type":"contexto","parentId":"doc1","timestamp":"2026-08-30T10:01:00Z","summary":"Extraiu principios do Scrum e Kanban"}
+{"id":"dec1","type":"decisao","parentId":"ctx1","timestamp":"2026-08-30T10:02:00Z","summary":"Decidiu aplicar Kanban para o time de infra"}
+{"id":"fer1","type":"ferramenta","parentId":"dec1","timestamp":"2026-08-30T10:03:00Z","summary":"Gerou quadro Kanban via API do Jira"}
+{"id":"res1","type":"resultado","parentId":"fer1","timestamp":"2026-08-30T10:04:00Z","summary":"Quadro Kanban configurado com 5 colunas"}
+{"id":"fer2","type":"ferramenta","parentId":"dec1","timestamp":"2026-08-30T10:05:00Z","summary":"Enviou email com instrucoes para o time"}
+{"id":"res2","type":"resultado","parentId":"fer2","timestamp":"2026-08-30T10:06:00Z","summary":"Email entregue para 12 membros"}
