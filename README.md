@@ -35,6 +35,7 @@ Node 20 ou superior. Nada mais.
 | [`agent-receipt`](./agent-receipt) | Recibo encadeado por acao do agente. Cada recibo carrega o hash do anterior, entao editar ou apagar o historico depois deixa marca detectavel, apontando a linha exata. |
 | [`agent-honeypot-detector`](./agent-honeypot-detector) | Analisa um HTML salvo em disco e diz se a pagina foi feita para manipular agente em vez de informar humano: instrucao em texto invisivel, comentario falando com o agente, divergencia entre texto visivel e texto lido, atributo carregando ordem, meta e JSON-LD imperativo, caractere invisivel. |
 | [`agent-trust-passport`](./agent-trust-passport) | Passaporte portatil do agente num json unico: identidade, permissoes concedidas, historico de cada concessao e revogacao com motivo, incidentes, e hash de integridade que acusa edicao na mao. |
+| [`rag-poison-ledger`](./rag-poison-ledger) | Livro razao append-only que liga documento a resposta. Quando um documento se revela errado, `blast` lista todas as respostas que ele contaminou e `trace` faz o caminho inverso, da resposta para os documentos que a alimentaram. |
 
 ## Uso
 

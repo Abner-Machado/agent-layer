@@ -1,0 +1,10 @@
+{
+  "name": "rag-poison-ledger",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "rag-poison-ledger": "./cli.mjs"
+  },
+  "license": "MIT",
+  "description": "Append-only ledger linking RAG documents to agent responses for poison tracking"
+}

@@ -1,0 +1,4 @@
+{"t":"e","id":"resp-1","docs":["doc-pricing-v1","doc-faq-2025"],"text":"O preco do plano Pro e R$99/mes.","ts":1756617600000}
+{"t":"e","id":"resp-2","docs":["doc-pricing-v1","doc-terms-old"],"text":"O cancelamento pode ser feito a qualquer momento.","ts":1756617700000}
+{"t":"f","docId":"doc-terms-old","status":"poisoned","by":"alice","why":"Termos antigos, nao refletem politica atual","ts":1756617800000}
+{"t":"c","docId":"doc-pricing-v1","status":"clean","by":"bob","why":"Verificado com time de precos","ts":1756617900000}
