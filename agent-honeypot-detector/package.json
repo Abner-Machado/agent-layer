@@ -1,0 +1,15 @@
+{
+  "name": "agent-honeypot-detector",
+  "version": "0.1.0",
+  "description": "Detector estatico de honeypots HTML direcionados a agentes de IA",
+  "type": "module",
+  "bin": {
+    "agent-honeypot-detector": "./cli.mjs"
+  },
+  "scripts": {
+    "test": "node --test test.mjs"
+  },
+  "keywords": ["ai", "honeypot", "security", "html", "detector", "agent"],
+  "author": "Abner Machado",
+  "license": "MIT"
+}
