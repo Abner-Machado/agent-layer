@@ -1,0 +1,10 @@
+{
+  "name": "rag-expiration-engine",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Validade temporal por documento para bases RAG",
+  "bin": "./cli.mjs",
+  "license": "MIT",
+  "keywords": ["rag", "expiration", "ttl", "knowledge-base", "temporal"],
+  "author": "Abner Machado"
+}

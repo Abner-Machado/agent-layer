@@ -1,0 +1,10 @@
+{
+  "name": "skill-poison-detector",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "skill-poison-detector": "./cli.mjs"
+  },
+  "license": "MIT",
+  "description": "Scanner estático que detecta instruções maliciosas em SKILL.md e arquivos auxiliares de agentes IA"
+}

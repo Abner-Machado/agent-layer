@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+*.log
+_log-*.txt
+.DS_Store
+Thumbs.db
+*.tmp
+.rag-expiration-index.json
