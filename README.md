@@ -17,8 +17,9 @@ Toda skill aqui obedece o mesmo contrato, e da para conferir lendo o codigo:
   pacote, sem supply chain para envenenar, sem `npm install`.
 - **Sem rede.** Nenhuma skill faz requisicao. Analise e sempre de arquivo local.
 - **Sem execucao dinamica em codigo de producao.** `eval`, `new Function` e `vm` nao
-  aparecem em lugar nenhum. `child_process` aparece apenas em arquivo de teste, para
-  executar a propria CLI e conferir o codigo de saida.
+  aparecem em lugar nenhum. `child_process` aparece apenas em arquivo de teste e no `verificar.mjs`, para
+  executar a propria CLI e os testes, sempre com o executavel e os argumentos como
+  lista, nunca com `shell`.
 - **Sem script de instalacao.** Nenhum `postinstall` no `package.json`.
 - **Nenhum dado sai da maquina.** Sem telemetria.
 
