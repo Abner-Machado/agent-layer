@@ -1,0 +1,49 @@
+{
+  "identity": {
+    "id": "80d5e8c6-45f0-49cc-886b-d65b453772e1",
+    "name": "Assistente de Teste",
+    "version": "1.0.0"
+  },
+  "permissions": [
+    "read",
+    "deploy"
+  ],
+  "tools": [
+    "fs",
+    "http"
+  ],
+  "history": [
+    {
+      "action": "grant",
+      "permission": "read",
+      "date": "2026-08-31T02:57:43.441Z",
+      "reason": "initial grant"
+    },
+    {
+      "action": "grant",
+      "permission": "write",
+      "date": "2026-08-31T02:57:43.441Z",
+      "reason": "initial grant"
+    },
+    {
+      "action": "grant",
+      "permission": "deploy",
+      "date": "2026-08-31T02:57:43.516Z",
+      "reason": "deploy aprovado"
+    },
+    {
+      "action": "revoke",
+      "permission": "write",
+      "date": "2026-08-31T02:57:43.598Z",
+      "reason": "cesso expirada"
+    }
+  ],
+  "incident": [
+    {
+      "date": "2026-08-31T02:57:43.743Z",
+      "severity": "medio",
+      "description": "acesso indevido"
+    }
+  ],
+  "hash": "16aa463f439831db93deffe36160631b523d0f25a82f59e8689740bfcdedfc37"
+}

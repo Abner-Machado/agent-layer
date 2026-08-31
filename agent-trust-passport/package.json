@@ -1,0 +1,9 @@
+{
+  "name": "agent-trust-passport",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "agent-trust-passport": "./cli.mjs"
+  },
+  "license": "MIT"
+}
