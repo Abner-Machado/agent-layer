@@ -1,0 +1,19 @@
+{
+  "comando": "node cli.mjs init exemplo-passo.json \"Assistente de Teste\" --permissions read,write,deploy --tools fs,http,terminal",
+  "resultado": {
+    "identity": {
+      "id": "gerado-unico",
+      "name": "Assistente de Teste",
+      "version": "1.0.0"
+    },
+    "permissions": ["read", "write", "deploy"],
+    "tools": ["fs", "http", "terminal"],
+    "history": [
+      { "action": "grant", "permission": "read", "date": "2026-08-30T...", "reason": "initial grant" },
+      { "action": "grant", "permission": "write", "date": "2026-08-30T...", "reason": "initial grant" },
+      { "action": "grant", "permission": "deploy", "date": "2026-08-30T...", "reason": "initial grant" }
+    ],
+    "incident": [],
+    "hash": "sha256..."
+  }
+}
