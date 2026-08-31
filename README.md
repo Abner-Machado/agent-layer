@@ -16,7 +16,9 @@ Toda skill aqui obedece o mesmo contrato, e da para conferir lendo o codigo:
 - **Zero dependencia externa.** So a biblioteca padrao do Node. Sem arvore de
   pacote, sem supply chain para envenenar, sem `npm install`.
 - **Sem rede.** Nenhuma skill faz requisicao. Analise e sempre de arquivo local.
-- **Sem execucao dinamica.** Nada de `eval`, `new Function`, `child_process` ou `vm`.
+- **Sem execucao dinamica em codigo de producao.** `eval`, `new Function` e `vm` nao
+  aparecem em lugar nenhum. `child_process` aparece apenas em arquivo de teste, para
+  executar a propria CLI e conferir o codigo de saida.
 - **Sem script de instalacao.** Nenhum `postinstall` no `package.json`.
 - **Nenhum dado sai da maquina.** Sem telemetria.
 
@@ -30,6 +32,7 @@ Node 20 ou superior. Nada mais.
 |---|---|
 | [`skill-poison-detector`](./skill-poison-detector) | Acha instrucao maliciosa ou escondida dentro de um `SKILL.md` antes de voce instalar: sequestro de regras, pedido de segredo, comando destrutivo, exfiltracao, texto invisivel, bidi override, base64 embutido, link suspeito. |
 | [`rag-expiration-engine`](./rag-expiration-engine) | Da validade temporal a documento de base RAG. Fato vencido para de ser injetado no contexto em vez de virar resposta errada. |
+| [`agent-receipt`](./agent-receipt) | Recibo encadeado por acao do agente. Cada recibo carrega o hash do anterior, entao editar ou apagar o historico depois deixa marca detectavel, apontando a linha exata. |
 
 ## Uso
 

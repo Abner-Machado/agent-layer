@@ -7,3 +7,6 @@ _log-*.txt
 Thumbs.db
 *.tmp
 .rag-expiration-index.json
+
+# sobras de execucao dos exemplos
+agent-receipt/exemplos/teste_*.jsonl
