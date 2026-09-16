@@ -1,0 +1,22 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  verificar:
+    name: ${{ matrix.os }} / node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      # Sem npm install de proposito: o repo promete zero dependencia.
+      # verificar.mjs descobre as skills, roda o test.mjs de cada uma e
+      # sai com 1 se alguma falhar, 2 se nao achar skill nenhuma.
+      - run: node verificar.mjs
