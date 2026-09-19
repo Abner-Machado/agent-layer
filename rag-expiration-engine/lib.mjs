@@ -62,9 +62,11 @@ export function checkValidity(expiresAt, referenceDate) {
     return { valid: true, status: "no_expiry", daysLeft: null };
   }
 
+  // Data ilegivel nao e "sem validade": e um indice corrompido. Se a duvida
+  // liberasse o documento, um byte trocado no indice viraria validade eterna.
   const expDate = new Date(expiresAt);
   if (isNaN(expDate.getTime())) {
-    return { valid: true, status: "no_expiry", daysLeft: null };
+    return { valid: false, status: "invalid_expiry", daysLeft: null };
   }
 
   const diffMs = expDate.getTime() - referenceDate.getTime();

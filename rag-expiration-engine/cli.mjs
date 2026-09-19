@@ -66,6 +66,12 @@ function cmdStamp(args) {
   if (ttl !== null) {
     expiresAt = computeExpiration(ttl, referenceDate);
     ttlMs = parseTTL(ttl, referenceDate);
+    // TTL que nao parseia ("30dias", "1 mes") nao pode virar "never" em silencio:
+    // e o erro de digitacao mais provavel e o resultado seria validade eterna.
+    if (expiresAt === null) {
+      console.error(`Erro: TTL invalido: ${ttl} (use 30d, 6m, 1y, uma data ISO ou never)`);
+      process.exit(1);
+    }
   }
 
   const entry = {
@@ -115,6 +121,7 @@ function cmdCheck(args) {
   const expired = [];
   const expiringSoon = [];
   const noExpiry = [];
+  const invalid = [];
   const valid = [];
 
   for (const [file, entry] of Object.entries(index)) {
@@ -123,6 +130,8 @@ function cmdCheck(args) {
 
     if (result.status === "no_expiry") {
       noExpiry.push(info);
+    } else if (result.status === "invalid_expiry") {
+      invalid.push(info);
     } else if (result.status === "expired") {
       expired.push(info);
     } else if (result.status === "expires_today") {
@@ -145,6 +154,7 @@ function cmdCheck(args) {
 
   console.log(`Status em ${now.toISOString()}`);
   printList("EXPIRADO", expired);
+  printList("DATA DE VALIDADE ILEGIVEL (tratado como invalido, re-stamp)", invalid);
   printList("VENCENDO EM <= 30 DIAS", expiringSoon);
   printList("VALIDO", valid);
   printList("SEM VALIDADE DEFINIDA", noExpiry);
