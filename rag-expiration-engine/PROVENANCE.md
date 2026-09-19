@@ -16,3 +16,16 @@
 - **TTL relativo usa meses de 30 dias** — nao ajusta para meses reais (31, 28, etc.)
 - **Nao monitora mudancas no arquivo original** — se o conteudo muda, o agente deve re-`stamp`
 - **Sem integracao com LLM** — e so a camada de metadados; o agente precisa chamar o CLI manualmente ou via hook
+
+## Auditoria de 2026-09-19 (Abner-Machado)
+
+Dois pontos em que a ferramenta falhava aberta, corrigidos a mao:
+
+- `stamp doc.md 30dias` (erro de digitacao no TTL) gravava o documento com validade
+  eterna e saia com 0. Agora sai com 1, imprime `Erro: TTL invalido` e nao toca no indice.
+- `checkValidity` com `expiresAt` ilegivel no indice devolvia `valid: true, no_expiry`. Um
+  byte trocado no indice virava validade eterna. Agora devolve `valid: false, invalid_expiry`;
+  o `check` lista em bloco proprio e o `filter` deixa de fora.
+
+Tres testes de CLI (caminho de falha, com `execFileSync`) e o teste unitario invertido.
+18 testes viraram 21.
